@@ -29,3 +29,17 @@ OVERWATCH
 ├── GateKeeper → Observe
 ├── Heimdal    → Interpret
 └── Monolith   → Remember
+
+
+---
+
+## Keywords
+
+Cybersecurity, Observability, Telemetry, Operational Intelligence,
+Security Automation, Telemetry Analysis, Risk Prioritization,
+Anomaly Detection, Stability Analysis, Endpoint Correlation,
+Operational Awareness, Telemetry Normalization,
+Security Engineering, Python, Intelligence Layer,
+Observability Engineering, Telemetry Interpretation,
+Security Monitoring, Operational Posture,
+Threat Visibility, Modular Architecture

@@ -36,3 +36,20 @@ def get_executions_by_endpoint(executions, endpoint):
             matching_executions.append(execution)
 
     return matching_executions
+
+def get_executions_by_finding(executions, finding_name):
+    """
+    Return executions containing a specific finding.
+    """
+
+    matching_executions = []
+
+    for execution in executions:
+
+        for finding in execution.findings:
+
+            if finding_name.lower() in finding.get("description", "").lower():
+                matching_executions.append(execution)
+                break
+
+    return matching_executions
