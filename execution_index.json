@@ -1,0 +1,92 @@
+[
+    {
+        "timestamp": "2026-05-23 15:44:39",
+        "endpoint": "GET /json",
+        "score": 60,
+        "risk": "HIGH RISK",
+        "current_phase": "FINAL_RENDERING",
+        "stability": "DEGRADED",
+        "findings": [
+            {
+                "finding": "Information Leakage",
+                "severity": "MEDIUM",
+                "details": "Server header exposed: gunicorn/19.9.0"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Strict-Transport-Security header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "X-Content-Type-Options header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "X-Frame-Options header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Content-Security-Policy header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Referrer-Policy header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Permissions-Policy header missing"
+            }
+        ]
+    },
+    {
+        "timestamp": "2026-05-23 15:44:39",
+        "endpoint": "GET /invalid-endpoint",
+        "score": 60,
+        "risk": "HIGH RISK",
+        "current_phase": "FINAL_RENDERING",
+        "stability": "DEGRADED",
+        "findings": [
+            {
+                "finding": "Information Leakage",
+                "severity": "MEDIUM",
+                "details": "Server header exposed: gunicorn/19.9.0"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Strict-Transport-Security header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "X-Content-Type-Options header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "X-Frame-Options header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Content-Security-Policy header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Referrer-Policy header missing"
+            },
+            {
+                "finding": "Missing Security Header",
+                "severity": "HIGH",
+                "details": "Permissions-Policy header missing"
+            }
+        ]
+    }
+]
