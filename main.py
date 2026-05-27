@@ -21,6 +21,40 @@
 # Detection with interpretation creates intelligence.
 # =========================================================
 
+# =========================================================
+# Baseline Intelligence Imports
+#
+# Responsible for operational baseline
+# awareness, telemetry pattern tracking,
+# and deviation detection foundations.
+# =========================================================
+
+from intelligence.baseline_analyzer import (
+    analyze_operational_baseline
+)
+# =========================================================
+# Drift Intelligence Imports
+#
+# Responsible for operational deviation
+# detection, behavioral drift analysis,
+# and anomaly awareness evolution.
+# =========================================================
+
+from intelligence.drift_analyzer import (
+    analyze_operational_drift
+)
+
+# =========================================================
+# Correlation Intelligence Imports
+#
+# Responsible for compound operational
+# signal correlation and converging
+# threat behavior analysis.
+# =========================================================
+
+from intelligence.correlation_analyzer import (
+    analyze_operational_correlation
+)
 
 # =========================================================
 # Query Layer Imports
@@ -77,6 +111,20 @@ from intelligence.escalation_analyzer import (
     analyze_escalation
 )
 
+
+# =========================================================
+# Adaptive Intelligence Imports
+#
+# Responsible for operational reflection,
+# telemetry weakness analysis, instability
+# trend detection, and adaptive evolution
+# recommendations.
+# =========================================================
+
+from intelligence.adaptive_analyzer import (
+    analyze_adaptive_opportunities
+)
+
 # =========================================================
 # Telemetry Source Configuration
 # =========================================================
@@ -91,6 +139,95 @@ INDEX_PATH = "execution_index.json"
 # =========================================================
 
 execution_history = load_execution_index(INDEX_PATH)
+
+# =========================================================
+# Baseline Operational Analysis
+#
+# Establish recurring telemetry baselines
+# and identify dominant operational
+# behavior patterns.
+#
+# Goal:
+# Build anomaly awareness foundations.
+# =========================================================
+
+baseline = analyze_operational_baseline(
+    execution_history
+)
+
+print("\n=== OPERATIONAL BASELINE ===\n")
+
+print(
+    f"Common Risk: "
+    f"{baseline['common_risk']}"
+)
+
+print(
+    f"Execution Volume: "
+    f"{baseline['execution_volume']}"
+)
+
+# =========================================================
+# Operational Drift Analysis
+#
+# Compare current telemetry behavior
+# against established operational
+# baselines.
+#
+# Goal:
+# Detect abnormal operational deviation.
+# =========================================================
+
+drift_analysis = analyze_operational_drift(
+    execution_history,
+    baseline
+)
+
+print("\n=== OPERATIONAL DRIFT ===\n")
+
+print(
+    f"Drift Detected: "
+    f"{drift_analysis['drift_detected']}"
+)
+
+if drift_analysis["reasons"]:
+    print("\nReasons:\n")
+
+    for reason in drift_analysis["reasons"]:
+        print(f"- {reason}")
+
+# =========================================================
+# Operational Correlation Analysis
+#
+# Correlate operational telemetry signals
+# to identify compound threat indicators
+# and converging operational risk behavior.
+#
+# Goal:
+# Support intelligent escalation analysis.
+# =========================================================
+
+correlation_analysis = (
+    analyze_operational_correlation(
+        execution_history
+    )
+)
+
+print("\n=== OPERATIONAL CORRELATION ===\n")
+
+print(
+    f"Correlation Detected: "
+    f"{correlation_analysis['correlation_detected']}"
+)
+
+if correlation_analysis["reasons"]:
+
+    print("\nReasons:\n")
+
+    for reason in correlation_analysis["reasons"]:
+
+        print(f"- {reason}")
+
 
 # =========================================================
 # Operational Posture Analysis
@@ -266,6 +403,31 @@ print("\n=== FINDING EXECUTIONS ===\n")
 
 for execution in finding_executions:
     print(execution.summary())
+
+# =========================================================
+# Adaptive Intelligence Analysis
+#
+# Analyze recurring telemetry weaknesses,
+# instability patterns, and future
+# operational refinement opportunities.
+#
+# Philosophy:
+# Observe.
+# Interpret.
+# Reflect.
+# Evolve.
+# =========================================================
+
+adaptive_insights = (
+    analyze_adaptive_opportunities(
+        execution_history
+    )
+)
+
+print("\n=== ADAPTIVE INTELLIGENCE ===\n")
+
+for insight in adaptive_insights:
+    print(f"- {insight}")
 
 # =========================================================
 # Escalation Awareness Analysis
