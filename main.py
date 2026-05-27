@@ -111,6 +111,18 @@ from intelligence.escalation_analyzer import (
     analyze_escalation
 )
 
+from intelligence.confidence_analyzer import(
+    analyze_operational_confidence
+)
+
+from intelligence.stability_analyzer import (
+    analyze_operational_stability
+)
+
+from intelligence.health_analyzer import (
+    analyze_operational_health
+)
+
 
 # =========================================================
 # Adaptive Intelligence Imports
@@ -228,6 +240,83 @@ if correlation_analysis["reasons"]:
 
         print(f"- {reason}")
 
+ # =========================================================
+# Operational Confidence Analysis
+#
+# Evaluate confidence levels associated
+# with telemetry interpretation and
+# operational conclusions.
+#
+# Goal:
+# Support explainable operational certainty.
+# =========================================================
+
+confidence_analysis = (
+    analyze_operational_confidence(
+        execution_history
+    )
+)
+
+print("\n=== OPERATIONAL CONFIDENCE ===\n")
+
+print(
+    f"Confidence Level: "
+    f"{confidence_analysis['confidence']}"
+)
+
+print(
+    f"Reason: "
+    f"{confidence_analysis['reason']}"
+)
+
+if confidence_analysis["details"]:
+
+    print("\nDetails:\n")
+
+    for detail in confidence_analysis["details"]:
+
+        print(f"- {detail}")       
+
+# =========================================================
+# Operational Stability Analysis
+#
+# Evaluate overall operational stability
+# conditions across telemetry activity.
+#
+# Goal:
+# Support operational resilience awareness.
+# =========================================================
+
+stability_analysis = (
+    analyze_operational_stability(
+        execution_history
+    )
+)
+
+print("\n=== OPERATIONAL STABILITY ===\n")
+
+print(
+    f"Stability: "
+    f"{stability_analysis['stability']}"
+)
+
+print(
+    f"\nStable Executions: "
+    f"{stability_analysis['stable_executions']}"
+)
+
+print(
+    f"Degraded Executions: "
+    f"{stability_analysis['degraded_executions']}"
+)
+
+if stability_analysis["reasons"]:
+
+    print("\nReasons:\n")
+
+    for reason in stability_analysis["reasons"]:
+
+        print(f"- {reason}")
 
 # =========================================================
 # Operational Posture Analysis
@@ -254,6 +343,39 @@ print("\nReasons:")
 
 for reason in operational_posture["reasons"]:
     print(f"- {reason}")
+
+# =========================================================
+# Operational Health Analysis
+#
+# Evaluate overall operational health
+# conditions across telemetry intelligence.
+#
+# Goal:
+# Provide high-level environmental awareness.
+# =========================================================
+
+health_analysis = (
+    analyze_operational_health(
+        operational_posture,
+        confidence_analysis,
+        stability_analysis
+    )
+)
+
+print("\n=== OPERATIONAL HEALTH ===\n")
+
+print(
+    f"Health: "
+    f"{health_analysis['health']}"
+)
+
+if health_analysis["reasons"]:
+
+    print("\nReasons:\n")
+
+    for reason in health_analysis["reasons"]:
+
+        print(f"- {reason}")        
 
 # =========================================================
 # Severity Distribution Analysis

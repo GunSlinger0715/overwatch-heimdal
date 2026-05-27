@@ -28,13 +28,22 @@ def analyze_operational_confidence(executions):
     """
 
     confidence_score = 0
+    confidence_reasons = []
 
     for execution in executions:
         # Evaluate confidence based on risk and stability
         if execution.risk == "HIGH RISK":
             confidence_score -= 2
+            confidence_reasons.append(
+                "HIGH RISK telemetry reduces "
+                "operational certainty."
+            )
         if execution.stability == "DEGRADED":
             confidence_score -= 1
+            confidence_reasons.append(
+                "DEGRADED stability introduces "
+                "operational ambiguity."
+        )
         
         # Increase confidence for low-risk, stable conditions
         if execution.risk == "LOW RISK" and execution.stability == "STABLE":
@@ -47,7 +56,8 @@ def analyze_operational_confidence(executions):
             "reason":(
                 "Multiple operational indicators "
                 "strongly agree."
-            )
+            ), 
+            "details": confidence_reasons
 }
     elif confidence_score >= 0:
         return {
@@ -55,7 +65,8 @@ def analyze_operational_confidence(executions):
             "reason":(
                 "Operational indicators partially agree "
                 "but ambiguity remains."
-            )
+            ), 
+            "details": confidence_reasons
         }
     else:
         return {
@@ -63,5 +74,6 @@ def analyze_operational_confidence(executions):
             "reason":(
                 "Telemetry signals are weak, inconsistent,  "
                 "or insufficient for strong conclusions."
-            )
+            ), 
+            "details": confidence_reasons
         }
