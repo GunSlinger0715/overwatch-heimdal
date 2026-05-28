@@ -26,6 +26,13 @@ def analyze_operational_stability(executions):
     stable_count = 0
     degraded_count = 0
     stability_reasons = []
+    
+    stability = "UNKNOWN"
+
+    if not executions: 
+        stability_reasons.append(
+            "No telemetry executions available for stability evaluation."
+        )
 
     for execution in executions: 
         if execution.stability == "STABLE": 
@@ -37,10 +44,14 @@ def analyze_operational_stability(executions):
                 "DEGRADED operational telemetry detected."
             )
 
-        if degraded_count > stable_count: 
-            stability = "UNSTABLE"
-        elif stable_count >= degraded_count: 
-            stability = "STABLE"
+    if degraded_count > stable_count: 
+        stability = "UNSTABLE"
+
+        stability_reasons.append(
+            "Degraded operational conditions exceed stable telemetry activity"
+        )
+    elif stable_count >= degraded_count: 
+        stability = "STABLE"  
     
     return {
         "stability": stability, 

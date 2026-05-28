@@ -14,6 +14,12 @@
 # Philosophy:
 # Healthy systems remain resilient under stress.
 #
+#
+# Operational health analysis must
+# degrade gracefully during partial
+# analyzer instability or telemetry
+# uncertainty.
+#
 # Observe.
 # Evaluate.
 # Endure.
@@ -28,7 +34,11 @@ def analyze_operational_health(
     health = "HEALTHY"
     health_reasons = []
 
-    if posture_analysis["posture"] == "ELEVATED RISK": 
+    posture_analysis = posture_analysis or {}
+    confidence_analysis = confidence_analysis or {}
+    stability_analysis = stability_analysis or {}
+
+    if posture_analysis.get("posture") == "ELEVATED RISK": 
         health = "UNHEALTHY"
 
         health_reasons.append(
@@ -36,13 +46,13 @@ def analyze_operational_health(
             "elevated environmental risk."
         )
 
-    if confidence_analysis["confidence"] == "LOW CONFIDENCE":
+    if confidence_analysis.get("confidence") == "LOW CONFIDENCE":
         health_reasons.append(
             "Low operational confidence "
             "reduces assessment reliability."
         )
 
-    if stability_analysis["stability"] == "UNSTABLE":
+    if stability_analysis.get("stability") == "UNSTABLE":
         health_reasons.append(
             "Operational instability detected "
             "across telemetry conditions."

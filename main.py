@@ -251,11 +251,32 @@ if correlation_analysis["reasons"]:
 # Support explainable operational certainty.
 # =========================================================
 
-confidence_analysis = (
-    analyze_operational_confidence(
-        execution_history
+try:
+
+    confidence_analysis = (
+        analyze_operational_confidence(
+            execution_history
+        )
     )
-)
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Confidence analyzer failed: "
+        f"{error}"
+    )
+
+    confidence_analysis = {
+        "confidence": "UNKNOWN",
+        "reason": (
+            "Operational confidence analysis "
+            "degraded due to analyzer instability."
+        ),
+        "details": [
+            "Confidence evaluation could not "
+            "complete safely."
+        ]
+    }
 
 print("\n=== OPERATIONAL CONFIDENCE ===\n")
 
@@ -287,11 +308,30 @@ if confidence_analysis["details"]:
 # Support operational resilience awareness.
 # =========================================================
 
-stability_analysis = (
-    analyze_operational_stability(
-        execution_history
+try: 
+
+    stability_analysis = (
+        analyze_operational_stability(
+            execution_history
+        )
     )
-)
+
+except Exception as error: 
+
+    print(
+        f"[ERROR] Stability analyzer failed: "
+        f"{error}"
+    )
+
+    stability_analysis = {
+        "stability": "UNKNOWN",
+        "stable_executions": 0, 
+        "degraded_executions": 0, 
+        "reasons": [
+            "Operational stability analysis"
+            "degraded due to analyzer instability"
+        ]
+    }
 
 print("\n=== OPERATIONAL STABILITY ===\n")
 
@@ -329,9 +369,28 @@ if stability_analysis["reasons"]:
 # awareness.
 # =========================================================
 
-operational_posture = analyze_operational_posture(
-    execution_history
-)
+try:
+
+    operational_posture = (
+        analyze_operational_posture(
+            execution_history
+        )
+    )
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Posture analyzer failed: "
+        f"{error}"
+    )
+
+    operational_posture = {
+        "posture": "UNKNOWN",
+        "reasons": [
+            "Operational posture analysis "
+            "degraded due to analyzer instability."
+        ]
+    }
 
 print("\n=== OPERATIONAL POSTURE ===\n")
 
@@ -354,14 +413,30 @@ for reason in operational_posture["reasons"]:
 # Provide high-level environmental awareness.
 # =========================================================
 
-health_analysis = (
-    analyze_operational_health(
-        operational_posture,
-        confidence_analysis,
-        stability_analysis
-    )
-)
+try:
 
+    health_analysis = (
+        analyze_operational_health(
+            operational_posture,
+            confidence_analysis,
+            stability_analysis
+        )
+    )
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Health analyzer failed: "
+        f"{error}"
+    )
+
+    health_analysis = {
+        "health": "UNKNOWN",
+        "reasons": [
+            "Operational health analysis "
+            "degraded due to analyzer instability."
+        ]
+    }
 print("\n=== OPERATIONAL HEALTH ===\n")
 
 print(
@@ -540,11 +615,25 @@ for execution in finding_executions:
 # Evolve.
 # =========================================================
 
-adaptive_insights = (
-    analyze_adaptive_opportunities(
-        execution_history
+try:
+
+    adaptive_insights = (
+        analyze_adaptive_opportunities(
+            execution_history
+        )
     )
-)
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Adaptive analyzer failed: "
+        f"{error}"
+    )
+
+    adaptive_insights = [
+        "Adaptive operational analysis "
+        "degraded due to analyzer instability."
+    ]
 
 print("\n=== ADAPTIVE INTELLIGENCE ===\n")
 
@@ -562,9 +651,26 @@ for insight in adaptive_insights:
 # immediate attention.
 # =========================================================
 
-escalation_status = analyze_escalation(
-    execution_history
-)
+try:
+
+    escalation_status = analyze_escalation(
+        execution_history
+    )
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Escalation analyzer failed: "
+        f"{error}"
+    )
+
+    escalation_status = {
+        "escalation": "UNKNOWN",
+        "reason": (
+            "Escalation analysis degraded "
+            "due to analyzer instability."
+        )
+    }
 
 print("\n=== ESCALATION STATUS ===\n")
 
