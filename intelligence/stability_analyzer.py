@@ -1,4 +1,13 @@
 # =========================================================
+# Stability Analyzer Imports
+#
+# Responsible for operational resilience
+# utility imports and analyzer support.
+# =========================================================
+
+from preservation_utils import safe_extract
+
+# =========================================================
 # Heimdal Stability Analyzer
 #
 # Purpose:
@@ -35,10 +44,16 @@ def analyze_operational_stability(executions):
         )
 
     for execution in executions: 
-        if execution.stability == "STABLE": 
+        stability_state = safe_extract(
+            execution, 
+            "stability",
+            "UNKNOWN"
+        )
+        if stability_state == "STABLE":
+
             stable_count += 1
         
-        if execution.stability == "DEGRADED":
+        if stability_state == "DEGRADED":
             degraded_count += 1
             stability_reasons.append(
                 "DEGRADED operational telemetry detected."

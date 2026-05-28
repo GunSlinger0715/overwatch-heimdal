@@ -1,4 +1,13 @@
 # =========================================================
+# Confidence Analyzer Imports
+#
+# Responsible for operational resilience
+# utility imports and analyzer support.
+# =========================================================
+
+from preservation_utils import safe_extract
+
+# =========================================================
 # Heimdal Confidence Analyzer
 #
 # Purpose:
@@ -31,22 +40,39 @@ def analyze_operational_confidence(executions):
     confidence_reasons = []
 
     for execution in executions:
+        
+        # Safely extract telemetry conditions
+        risk_state = safe_extract(
+            execution,
+            "risk",
+            "UNKNOWN"
+        )
+
+        stability_state = safe_extract(
+            execution,
+            "stability",
+            "UNKNOWN"
+        )
         # Evaluate confidence based on risk and stability
-        if execution.risk == "HIGH RISK":
+        if risk_state == "HIGH RISK":
             confidence_score -= 2
             confidence_reasons.append(
                 "HIGH RISK telemetry reduces "
                 "operational certainty."
             )
-        if execution.stability == "DEGRADED":
+        if stability_state == "DEGRADED":
             confidence_score -= 1
             confidence_reasons.append(
                 "DEGRADED stability introduces "
                 "operational ambiguity."
-        )
+            )
         
         # Increase confidence for low-risk, stable conditions
-        if execution.risk == "LOW RISK" and execution.stability == "STABLE":
+        if (
+            risk_state == "LOW RISK"
+            and
+            stability_state == "STABLE"
+        ):
             confidence_score += 2
 
     # Classify confidence level

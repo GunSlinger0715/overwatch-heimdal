@@ -1,4 +1,13 @@
 # =========================================================
+# Posture Analyzer Imports
+#
+# Responsible for operational resilience
+# utility imports and analyzer support.
+# =========================================================
+
+from preservation_utils import safe_extract
+
+# =========================================================
 # Heimdal Operational Posture Analyzer
 #
 # Purpose:
@@ -31,12 +40,26 @@ def analyze_operational_posture(executions):
 
     for execution in executions:
         
+        # Safely extract telemetry conditions
+        risk_state = safe_extract(
+            execution, 
+            "risk",
+            "UNKNOWN"
+        )
+
+        stability_state = safe_extract(
+            execution, 
+            "stability",
+            "UNKNOWN"
+        )
+
         # Detect elevated operational risk
-        if execution.risk == "HIGH RISK":
+        if risk_state == "HIGH RISK":
             high_risk_count += 1
+
         # Detect degraded operational stability
-        if execution.stability == "DEGRADED":
-            degraded_count += 1
+        if stability_state == "DEGRADED":
+            degraded_count +=1
 
     # Track elevated operational risk conditions
     if high_risk_count >= 1:
