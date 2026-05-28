@@ -135,6 +135,75 @@ The Black Cells prepare OVERWATCH for future:
 - hostile telemetry containment
 - resilient cognition under uncertainty
 
+## Resilient Cognition Flow
+
+Heimdal now implements a layered operational cognition pipeline designed to preserve operational awareness during unstable, degraded, or uncertain telemetry conditions.
+
+The operational flow now includes trust-aware ingestion, cognition protection boundaries, uncertainty isolation, and future adjudication preparation.
+
+### Current Operational Cognition Flow
+
+```text
+Telemetry
+    ↓
+Validation
+    ↓
+Trust Evaluation
+    ↓
+Normalization
+    ↓
+Baseline Analysis
+    ↓
+Drift Detection
+    ↓
+Correlation Analysis
+    ↓
+Confidence Evaluation
+    ↓
+Stability Analysis
+    ↓
+Operational Posture
+    ↓
+Health Synthesis
+    ↓
+Adaptive Intelligence
+    ↓
+Escalation Awareness
+```
+
+### Resilient Operational Protection Flow
+
+```text
+Telemetry Instability
+    ↓
+Trust Degradation
+    ↓
+Analyzer Isolation
+    ↓
+Graceful Operational Degradation
+    ↓
+Black Cells Isolation
+    ↓
+Future Odin Adjudication
+```
+
+### Architectural Philosophy
+
+Operational cognition should remain resilient under imperfect conditions.
+
+The goal of Heimdal is not merely to detect operational conditions, but to preserve explainable operational awareness during instability, uncertainty, and degraded telemetry states.
+
+### Long-Term Direction
+
+Future operational cognition evolution may include:
+
+- adaptive trust evolution
+- telemetry lineage reasoning
+- operational memory integration (Monolith)
+- distributed cognition resilience
+- adjudication intelligence (Odin)
+- autonomous defensive response systems
+
 ### Long-Term Direction
 
 This resilience model prepares Heimdal for future:

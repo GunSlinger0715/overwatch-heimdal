@@ -1,0 +1,42 @@
+[
+    {
+        "timestamp": "2026-05-29 06:45:00",
+        "endpoint": "/api/test",
+        "trust_score": 0.2,
+        "trust_status": "SUSPICIOUS",
+        "validation_issues": [
+            "Telemetry structure inconsistency detected."
+        ],
+        "quarantine_reason": "Manual Black Cells isolation test."
+    },
+    {
+        "timestamp": "2026-05-29 06:45:00",
+        "endpoint": "/api/test",
+        "trust_score": 0.2,
+        "trust_status": "SUSPICIOUS",
+        "validation_issues": [
+            "Telemetry structure inconsistency detected."
+        ],
+        "quarantine_reason": "Manual Black Cells isolation test."
+    },
+    {
+        "timestamp": "2026-05-29 06:45:00",
+        "endpoint": "/api/test",
+        "trust_score": 0.2,
+        "trust_status": "SUSPICIOUS",
+        "validation_issues": [
+            "Telemetry structure inconsistency detected."
+        ],
+        "quarantine_reason": "Manual Black Cells isolation test."
+    },
+    {
+        "timestamp": "2026-05-29 06:45:00",
+        "endpoint": "/api/test",
+        "trust_score": 0.2,
+        "trust_status": "SUSPICIOUS",
+        "validation_issues": [
+            "Telemetry structure inconsistency detected."
+        ],
+        "quarantine_reason": "Automatic quarantine evaluation triggered."
+    }
+]
