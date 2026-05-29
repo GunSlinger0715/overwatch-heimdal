@@ -1,4 +1,12 @@
 # =========================================================
+# Endpoint Analyzer Imports
+#
+# Responsible for operational resilience
+# utility imports and analyzer support.
+# =========================================================
+from preservation_utils import safe_extract
+
+# =========================================================
 # Heimdal Endpoint Activity Analyzer
 #
 # Purpose:
@@ -25,8 +33,12 @@ def analyze_endpoint_activity(executions):
     # Analyze telemetry execution history
     for execution in executions:
         
-        # Extract operational endpoint identifier
-        endpoint = execution.endpoint
+        # Safely extract operational endpoint identifier
+        endpoint = safe_extract(
+            execution,
+            "endpoint",
+            "UNKNOWN-ENDPOINT"
+        )
 
         # Initialize endpoint activity tracking
         if endpoint not in endpoint_counts:

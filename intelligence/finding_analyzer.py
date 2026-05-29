@@ -1,4 +1,12 @@
 # =========================================================
+# Finding Analyzer Imports
+#
+# Responsible for operational resilience
+# utility imports and analyzer support.
+# =========================================================
+from preservation_utils import safe_extract
+
+# =========================================================
 # Heimdal Finding Density Analyzer
 #
 # Purpose:
@@ -23,9 +31,17 @@ def analyze_finding_totals(executions):
     
     # Analyze telemetry execution findings
 
-    for execution in executions:
-        total_findings += len(
-            execution.findings
+    for execution in executions: 
+
+        findings = safe_extract(
+            execution, 
+            "findings",
+            []
         )
+
+        total_findings += len(
+            findings
+        )
+        
     # Measure finding density contribution
     return total_findings

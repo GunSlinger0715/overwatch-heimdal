@@ -1,3 +1,6 @@
+
+from preservation_utils import safe_extract
+
 # =========================================================
 # Heimdal Severity Distribution Analyzer
 #
@@ -27,7 +30,14 @@ def analyze_severity_distribution(executions):
         "HIGH": 0
     }
 
-    for execution in executions:
+    for execution in executions: 
+
+        findings = safe_extract(
+            execution, 
+            "findings",
+            []
+        )
+        
         # Analyze telemetry execution findings
         for finding in execution.findings:
 

@@ -1,4 +1,13 @@
 # =========================================================
+# Priority Analyzer Imports
+#
+# Responsible for operational resilience
+# utility imports and analyzer support.
+# =========================================================
+
+from preservation_utils import safe_extract
+
+# =========================================================
 # Heimdal Operational Priority Analyzer
 #
 # Purpose:
@@ -23,16 +32,36 @@ def calculate_priority_score(execution):
     # Track operational priority score
     score = 0
 
+        # Safely extract telemetry conditions
+
+    risk_state = safe_extract(
+        execution,
+        "risk",
+        "UNKNOWN"
+    )
+
+    stability_state = safe_extract(
+        execution,
+        "stability",
+        "UNKNOWN"
+    )
+
+    findings = safe_extract(
+        execution,
+        "findings",
+        []
+    )
+
     # Elevate priority for high operational risk
-    if execution.risk == "HIGH RISK":
+    if risk_state == "HIGH RISK":
         score += 5
 
     # Elevate priority for degraded stability
-    if execution.stability == "DEGRADED":
+    if stability_state == "DEGRADED":
         score += 3
     
     # Increase priority based on finding density
-    score += len(execution.findings)
+    score += len(findings)
 
     return score
 
