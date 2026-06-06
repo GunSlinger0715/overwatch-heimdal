@@ -123,6 +123,14 @@ from intelligence.health_analyzer import (
     analyze_operational_health
 )
 
+from intelligence.threat_pattern_analyzer import (
+    analyze_threat_patterns
+)
+
+from intelligence.history_analyzer import (
+    analyze_historical_patterns
+)
+
 
 # =========================================================
 # Adaptive Intelligence Imports
@@ -450,7 +458,111 @@ if health_analysis["reasons"]:
 
     for reason in health_analysis["reasons"]:
 
-        print(f"- {reason}")        
+        print(f"- {reason}") 
+
+# =========================================================
+# Threat Pattern Analysis
+#
+# Identify recurring HIGH RISK and
+# DEGRADED operational behavior that
+# may indicate emerging threat activity.
+#
+# Goal:
+# Support behavioral threat awareness.
+# =========================================================
+
+try:
+
+    threat_analysis = (
+        analyze_threat_patterns(
+            execution_history
+        )
+    )
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Threat pattern analyzer failed: "
+        f"{error}"
+    )
+
+    threat_analysis = {
+        "threat_detected": False,
+        "threat_count": 0,
+        "reasons": [
+            "Threat pattern analysis degraded "
+            "due to analyzer instability."
+        ]
+    }
+
+print("\n=== THREAT PATTERN ANALYSIS ===\n")
+
+print(
+    f"Threat Detected: "
+    f"{threat_analysis['threat_detected']}"
+)
+
+print(
+    f"Threat Count: "
+    f"{threat_analysis['threat_count']}"
+)
+
+if threat_analysis["reasons"]:
+
+    print("\nReasons:\n")
+
+    for reason in threat_analysis["reasons"]:
+
+        print(f"- {reason}")   
+
+# =========================================================
+# Historical Pattern Analysis
+#
+# Analyze recurring operational behavior
+# across telemetry history to identify
+# persistent patterns and trends.
+#
+# Goal:
+# Support long-term operational awareness.
+# =========================================================
+
+try:
+
+    historical_analysis = (
+        analyze_historical_patterns(
+            execution_history
+        )
+    )
+
+except Exception as error:
+
+    print(
+        f"[ERROR] Historical analyzer failed: "
+        f"{error}"
+    )
+
+    historical_analysis = {
+        "patterns_detected": False,
+        "patterns": [
+            "Historical pattern analysis "
+            "degraded due to analyzer instability."
+        ]
+    }
+
+print("\n=== HISTORICAL PATTERN ANALYSIS ===\n")
+
+print(
+    f"Patterns Detected: "
+    f"{historical_analysis['patterns_detected']}"
+)
+
+if historical_analysis["patterns"]:
+
+    print("\nPatterns:\n")
+
+    for pattern in historical_analysis["patterns"]:
+
+        print(f"- {pattern}")    
 
 # =========================================================
 # Severity Distribution Analysis
