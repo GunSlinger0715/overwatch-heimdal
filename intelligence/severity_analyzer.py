@@ -39,7 +39,7 @@ def analyze_severity_distribution(executions):
         )
         
         # Analyze telemetry execution findings
-        for finding in execution.findings:
+        for finding in findings:
 
             severity = finding.get(
                 "severity",

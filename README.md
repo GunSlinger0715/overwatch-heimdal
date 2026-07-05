@@ -303,6 +303,116 @@ Detection with interpretation creates intelligence.
 
 ---
 
+## OVERWATCH Operational Architecture
+
+OVERWATCH is organized into specialized operational subsystems, each responsible for a distinct stage of the cybersecurity intelligence pipeline.
+
+Rather than producing isolated alerts, OVERWATCH transforms raw telemetry into explainable operational intelligence through layered analysis, historical memory, operational judgment, and actionable recommendations.
+
+The architecture follows the philosophy:
+
+> **Observe → Interpret → Remember → Judge → Recommend**
+
+```text
+                            OVERWATCH
+══════════════════════════════════════════════════════════════════════
+
+                          GateKeeper
+                           Observe
+                              │
+                              ▼
+                 Execution Context
+                 Observation Summary
+                              │
+                              ▼
+══════════════════════════════════════════════════════════════════════
+                            Heimdal
+                         Operational Cognition
+══════════════════════════════════════════════════════════════════════
+
+                    Evidence Collection Layer
+
+               • Baseline Analyzer
+               • Drift Analyzer
+               • Endpoint Analyzer
+               • Finding Analyzer
+               • Historical Analyzer
+               • Correlation Analyzer
+               • Severity Analyzer
+
+                              │
+                              ▼
+
+                  Operational Assessment Layer
+
+               • Confidence Analyzer
+               • Stability Analyzer
+               • Posture Analyzer
+               • Priority Analyzer
+               • Health Analyzer
+
+                              │
+                              ▼
+
+                  Operational Cognition Layer
+
+                    • Interpreter
+
+                              │
+                              ▼
+
+                Operational Interpretation
+
+══════════════════════════════════════════════════════════════════════
+
+                              │
+                              ▼
+
+                          Monolith
+                          Remember
+
+                              │
+                              ▼
+
+                            Odin
+                            Judge
+
+                              │
+                              ▼
+
+                            Forge
+                         Recommend
+
+══════════════════════════════════════════════════════════════════════
+```
+
+### Architectural Responsibilities
+
+| Subsystem | Responsibility |
+|-----------|----------------|
+| **GateKeeper** | Observes APIs and infrastructure, producing structured telemetry and operational observations. |
+| **Heimdal** | Interprets telemetry using layered operational analyzers to produce explainable operational intelligence. |
+| **Monolith** | Preserves historical execution context, operational memory, and telemetry lineage for future reasoning. |
+| **Odin** | Evaluates operational intelligence and determines the appropriate operational response. |
+| **Forge** | Generates explainable remediation guidance and recommended actions for analysts. |
+
+### Architectural Philosophy
+
+Each subsystem maintains a single operational responsibility.
+
+Rather than combining detection, interpretation, memory, and decision-making into one component, OVERWATCH separates these concerns into specialized operational layers that communicate through well-defined interfaces.
+
+This architecture promotes:
+
+- Explainable operational reasoning
+- Modular subsystem design
+- Historical operational awareness
+- Scalable intelligence evolution
+- Human-centered decision support
+- Separation of operational responsibilities
+
+> **Detection without understanding creates noise. Detection with interpretation creates intelligence.**
+
 ## Architectural Principles
 
 * modular subsystem architecture
