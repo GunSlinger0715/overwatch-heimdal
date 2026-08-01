@@ -1,450 +1,286 @@
-# OVERWATCH - HEIMDAL
+# 🌳 Yggdrasil Labs Engineering
 
-![Overwatch Heimdal](assets/overwatch-heimdal-banner.png)
+# 👁 Heimdal
 
-Operational intelligence and telemetry interpretation subsystem for the OVERWATCH ecosystem.
+## Operational Intelligence & Telemetry Interpretation Engine
+
+> **Transforming Observations into Operational Understanding.**
+
+<img width="1536" height="1024" alt="ChatGPT Image Aug 1, 2026, 06_17_17 PM" src="https://github.com/user-attachments/assets/d97626d4-c040-4288-bc18-1a3fe39fe6d8" />
 
 ---
 
-## Purpose
+# Why Heimdal Exists
 
-Heimdal serves as the operational intelligence layer for OVERWATCH.
+Raw telemetry alone does not create operational intelligence.
 
-Its mission is to transform telemetry into explainable operational intelligence by identifying patterns, prioritizing risk, and deriving meaning from operational noise.
+Every day, security teams receive thousands of API responses, logs, alerts, and status updates. While these observations are valuable, they often lack the context necessary to support effective decision-making.
 
-## Trust-Aware Ingestion
+Heimdal exists to bridge that gap.
 
-Heimdal now implements trust-aware telemetry ingestion to protect the operational cognition pipeline from malformed, incomplete, or potentially dangerous telemetry conditions.
+As the interpretation layer of the OVERWATCH ecosystem, Heimdal transforms structured observations into meaningful operational understanding by evaluating system health, identifying patterns, classifying findings, and assigning context.
 
-The ingestion layer performs:
+Heimdal does not make decisions.
 
-- telemetry validation
-- required field verification
-- telemetry normalization
-- trust evaluation
-- degraded telemetry classification
-- safe operational modeling
+It prepares trusted intelligence so that informed decisions can be made.
 
-## Graceful Operational Degradation
+---
 
-Heimdal is designed to preserve operational cognition continuity during unstable telemetry conditions, analyzer instability, or partial operational failures.
+# Mission
 
-Rather than collapsing the intelligence pipeline during isolated analyzer failures, Heimdal now implements graceful degradation and resilient cognition boundaries.
+Heimdal's mission is to transform trusted observations into contextual operational intelligence.
 
-### Resilience Capabilities
+Every interpretation should answer three questions:
 
-Current resilience protections include:
+- What happened?
+- What does it mean?
+- Why does it matter?
 
-- analyzer fault isolation
-- degraded cognition continuity
-- safe operational fallback states
-- defensive telemetry handling
-- explainable degraded reasoning
-- cognition preservation boundaries
+---
 
-### Operational Philosophy
+# Core Responsibilities
 
-Operational intelligence must survive uncertainty, instability, malformed telemetry, and degraded operational conditions.
+Heimdal is responsible for:
 
-Partial operational visibility is preferable to catastrophic cognition collapse.
+- Observation Interpretation
+- Operational Context Generation
+- Health Classification
+- Finding Categorization
+- Status Normalization
+- Context Enrichment
+- Pattern Recognition
+- Intelligence Preparation
 
-### Analyzer Isolation Boundaries
+---
 
-Core analyzers now execute behind isolated orchestration boundaries designed to:
-
-- prevent single-analyzer failure propagation
-- preserve downstream operational reasoning
-- maintain escalation awareness
-- protect adaptive intelligence continuity
-- support future operational adjudication
-
-### Graceful Degradation Model
-
-When instability occurs:
+# Intelligence Pipeline
 
 ```text
-Analyzer Failure
-→ Safe Fallback State
-→ Degraded Operational Reasoning
-→ Continued Cognition Flow
+GateKeeper
+      │
+      ▼
+Operational Observation
+      │
+      ▼
+Heimdal Interpretation
+      │
+      ▼
+Operational Context
+      │
+      ▼
+Monolith Historical Storage
+      │
+      ▼
+Odin Decision Engine
 ```
 
-## The Black Cells
+Heimdal transforms observations into understanding.
 
-The Black Cells represent OVERWATCH’s operational uncertainty isolation layer.
+---
 
-Their purpose is to safely contain telemetry, operational conditions, or analyzer states that cannot be trusted confidently by the operational cognition pipeline.
+# Health Classification
 
-The Black Cells exist to protect Heimdal’s cognition integrity from potentially dangerous, contradictory, malformed, or highly uncertain operational telemetry.
+Heimdal evaluates observations and assigns standardized operational health states.
 
-### Black Cells Philosophy
+| Status | Description |
+|---------|-------------|
+| 🟢 HEALTHY | Operating as expected |
+| 🟡 WARNING | Attention recommended |
+| 🔴 OFFLINE | Service unavailable |
+| ⚫ UNKNOWN | Additional analysis required |
+| 🔵 INVALID TARGET | Target could not be evaluated |
+| 🟣 AWAITING DATA | Observation pending |
 
-Uncertain telemetry should be isolated, observed, and judged safely.
+These classifications establish a common language throughout the OVERWATCH platform.
 
-Operational uncertainty should never be allowed to poison cognition.
+---
 
-### Isolation Conditions
-
-Telemetry may eventually be routed into the Black Cells when:
-
-- telemetry trust scoring falls below acceptable thresholds
-- malformed operational structures are detected
-- analyzers produce contradictory operational conclusions
-- telemetry integrity becomes uncertain
-- operational behavior appears suspicious or inconsistent
-- cognition confidence degrades significantly
-
-### Operational Isolation Model
+# Interpretation Architecture
 
 ```text
-Telemetry
-→ Trust Evaluation
-→ Suspicion Detection
-→ Isolation (Black Cells)
-→ Future Adjudication
+Operational Observation
+           │
+           ▼
+ Context Evaluation
+           │
+           ▼
+ Status Classification
+           │
+           ▼
+ Context Enrichment
+           │
+           ▼
+ Operational Intelligence
+           │
+           ▼
+ Monolith
 ```
 
-### Black Cells Responsibilities
+Heimdal focuses on one responsibility:
 
-The Black Cells are intended to:
+> **Understand before deciding.**
 
-- isolate uncertain telemetry safely
-- preserve operational evidence
-- protect cognition continuity
-- support future adjudication workflows
-- prevent telemetry poisoning
-- maintain operational observability during uncertainty
+---
 
-### Future Odin Integration
+# Current Development Status
 
-Future versions of OVERWATCH will allow Odin to evaluate isolated telemetry using:
+## Current Phase
 
-- historical operational context
-- trust lineage
-- behavioral correlation
-- operational consistency analysis
-- adaptive intelligence review
+🟢 Active Development
 
-### Long-Term Vision
+### Completed
 
-The Black Cells prepare OVERWATCH for future:
+- ✅ Interpretation Model
+- ✅ Health Classification
+- ✅ Context Generation
+- ✅ Status Mapping
+- ✅ Operational Intelligence Objects
 
-- operational adjudication
-- adaptive trust evolution
-- telemetry lineage analysis
-- hostile telemetry containment
-- resilient cognition under uncertainty
+### In Progress
 
-## Resilient Cognition Flow
+- ⬜ Pattern Recognition
+- ⬜ Historical Context Integration
+- ⬜ Intelligent Correlation
+- ⬜ Dashboard Integration
 
-Heimdal now implements a layered operational cognition pipeline designed to preserve operational awareness during unstable, degraded, or uncertain telemetry conditions.
+---
 
-The operational flow now includes trust-aware ingestion, cognition protection boundaries, uncertainty isolation, and future adjudication preparation.
+# Roadmap
 
-### Current Operational Cognition Flow
+## Phase 1 — Interpretation Framework
 
-```text
-Telemetry
-    ↓
-Validation
-    ↓
-Trust Evaluation
-    ↓
-Normalization
-    ↓
-Baseline Analysis
-    ↓
-Drift Detection
-    ↓
-Correlation Analysis
-    ↓
-Confidence Evaluation
-    ↓
-Stability Analysis
-    ↓
-Operational Posture
-    ↓
-Health Synthesis
-    ↓
-Adaptive Intelligence
-    ↓
-Escalation Awareness
-```
+✔ Complete
 
-### Resilient Operational Protection Flow
+---
+
+## Phase 2 — Operational Intelligence
+
+🔄 In Progress
+
+- Context Enrichment
+- Status Correlation
+- Historical References
+
+---
+
+## Phase 3 — Advanced Analysis
+
+- Behavioral Pattern Recognition
+- Multi-Observation Correlation
+- Operational Trend Analysis
+- Confidence Scoring
+
+---
+
+## Phase 4 — AI Assisted Interpretation
+
+- Context Learning
+- Intelligent Classification
+- Adaptive Analysis
+- Operational Insight Generation
+
+---
+
+# Repository Structure
 
 ```text
-Telemetry Instability
-    ↓
-Trust Degradation
-    ↓
-Analyzer Isolation
-    ↓
-Graceful Operational Degradation
-    ↓
-Black Cells Isolation
-    ↓
-Future Odin Adjudication
-```
+overwatch-heimdal/
 
-### Architectural Philosophy
-
-Operational cognition should remain resilient under imperfect conditions.
-
-The goal of Heimdal is not merely to detect operational conditions, but to preserve explainable operational awareness during instability, uncertainty, and degraded telemetry states.
-
-### Long-Term Direction
-
-Future operational cognition evolution may include:
-
-- adaptive trust evolution
-- telemetry lineage reasoning
-- operational memory integration (Monolith)
-- distributed cognition resilience
-- adjudication intelligence (Odin)
-- autonomous defensive response systems
-
-### Long-Term Direction
-
-This resilience model prepares Heimdal for future:
-
-- Black Cells telemetry isolation
-- operational adjudication workflows
-- adaptive intelligence refinement
-- distributed cognition resilience
-- historical operational reasoning
-
-### Ingestion Philosophy
-
-Operational intelligence begins with trusted telemetry.
-
-Untrusted or uncertain telemetry should never be allowed to poison operational cognition.
-
-### Current Trust States
-
-| State | Description |
-|---|---|
-| TRUSTED | Telemetry passed validation and normalization safely |
-| DEGRADED | Minor inconsistencies or incomplete operational context detected |
-| SUSPICIOUS | Significant telemetry inconsistencies detected |
-| QUARANTINED | Unsafe telemetry isolated from operational cognition |
-
-### Operational Goals
-
-The trust-aware ingestion layer exists to:
-
-- preserve cognition integrity
-- prevent analyzer poisoning
-- support graceful degraded reasoning
-- maintain operational visibility during instability
-- prepare uncertain telemetry for future adjudication workflows
-
-### Architectural Evolution
-
-The ingestion pipeline now follows:
-
-```text
-Telemetry
-→ Validation
-→ Trust Evaluation
-→ Normalization
-→ Operational Cognition
+├── interpreter/
+├── models/
+├── analysis/
+├── classifiers/
+├── docs/
+├── README.md
+├── LICENSE
+└── requirements.txt
 ```
 
 ---
 
-## Core Responsibilities
+# Technology Stack
 
-* telemetry ingestion
-* telemetry normalization
-* operational querying
-* operational posture analysis
-* explainable reasoning
-* severity distribution analysis
-* finding density analysis
-* endpoint activity correlation
-* operational prioritization
-* escalation awareness
-* operational summarization
+| Technology | Purpose |
+|------------|---------|
+| Python | Core Engine |
+| JSON | Operational Intelligence Objects |
+| REST APIs | Integration |
+| GitHub | Version Control |
 
----
+### Future Technologies
 
-## Ecosystem Architecture
-
-```text
-OVERWATCH
-├── GateKeeper → Observe
-├── Heimdal    → Interpret
-└── Monolith   → Remember
-```
+- Go Services
+- PostgreSQL
+- AI Assisted Analysis
+- Docker
+- Kubernetes
 
 ---
 
-## Operational Intelligence Pipeline
+# How Heimdal Fits Into OVERWATCH
 
-```text
-Telemetry
-→ Interpretation
-→ Severity Awareness
-→ Finding Density
-→ Endpoint Correlation
-→ Prioritization
-→ Escalation Awareness
-→ Operational Evidence
-```
+GateKeeper observes.
 
----
+Ratatoskr transports.
 
-## Philosophy
+Heimdal understands.
 
-Detection without understanding creates noise.
+Monolith remembers.
 
-Detection with interpretation creates intelligence.
+Odin decides.
+
+Forge recommends.
+
+Dashboard informs.
+
+Every decision begins with understanding.
 
 ---
 
-## OVERWATCH Operational Architecture
+# Related Projects
 
-OVERWATCH is organized into specialized operational subsystems, each responsible for a distinct stage of the cybersecurity intelligence pipeline.
+🌳 **Yggdrasil Foundation**  
+Engineering philosophy and organizational standards.
 
-Rather than producing isolated alerts, OVERWATCH transforms raw telemetry into explainable operational intelligence through layered analysis, historical memory, operational judgment, and actionable recommendations.
+🛡 **OVERWATCH Platform**  
+Overall operational intelligence architecture.
 
-The architecture follows the philosophy:
+🛡 **GateKeeper**  
+Collects trusted operational observations.
 
-> **Observe → Interpret → Remember → Judge → Recommend**
+🐿 **Ratatoskr**  
+Securely transports operational intelligence.
 
-```text
-                            OVERWATCH
-══════════════════════════════════════════════════════════════════════
+🗄 **Monolith**  
+Preserves historical intelligence.
 
-                          GateKeeper
-                           Observe
-                              │
-                              ▼
-                 Execution Context
-                 Observation Summary
-                              │
-                              ▼
-══════════════════════════════════════════════════════════════════════
-                            Heimdal
-                         Operational Cognition
-══════════════════════════════════════════════════════════════════════
+⚖ **Odin**  
+Produces explainable operational decisions.
 
-                    Evidence Collection Layer
+🔨 **Forge**  
+Transforms decisions into actionable recommendations.
 
-               • Baseline Analyzer
-               • Drift Analyzer
-               • Endpoint Analyzer
-               • Finding Analyzer
-               • Historical Analyzer
-               • Correlation Analyzer
-               • Severity Analyzer
-
-                              │
-                              ▼
-
-                  Operational Assessment Layer
-
-               • Confidence Analyzer
-               • Stability Analyzer
-               • Posture Analyzer
-               • Priority Analyzer
-               • Health Analyzer
-
-                              │
-                              ▼
-
-                  Operational Cognition Layer
-
-                    • Interpreter
-
-                              │
-                              ▼
-
-                Operational Interpretation
-
-══════════════════════════════════════════════════════════════════════
-
-                              │
-                              ▼
-
-                          Monolith
-                          Remember
-
-                              │
-                              ▼
-
-                            Odin
-                            Judge
-
-                              │
-                              ▼
-
-                            Forge
-                         Recommend
-
-══════════════════════════════════════════════════════════════════════
-```
-
-### Architectural Responsibilities
-
-| Subsystem | Responsibility |
-|-----------|----------------|
-| **GateKeeper** | Observes APIs and infrastructure, producing structured telemetry and operational observations. |
-| **Heimdal** | Interprets telemetry using layered operational analyzers to produce explainable operational intelligence. |
-| **Monolith** | Preserves historical execution context, operational memory, and telemetry lineage for future reasoning. |
-| **Odin** | Evaluates operational intelligence and determines the appropriate operational response. |
-| **Forge** | Generates explainable remediation guidance and recommended actions for analysts. |
-
-### Architectural Philosophy
-
-Each subsystem maintains a single operational responsibility.
-
-Rather than combining detection, interpretation, memory, and decision-making into one component, OVERWATCH separates these concerns into specialized operational layers that communicate through well-defined interfaces.
-
-This architecture promotes:
-
-- Explainable operational reasoning
-- Modular subsystem design
-- Historical operational awareness
-- Scalable intelligence evolution
-- Human-centered decision support
-- Separation of operational responsibilities
-
-> **Detection without understanding creates noise. Detection with interpretation creates intelligence.**
-
-## Architectural Principles
-
-* modular subsystem architecture
-* explainable operational reasoning
-* telemetry-driven intelligence
-* operational clarity over alert noise
-* scalable intelligence layering
-* maintainable orchestration pipelines
-* separation of operational responsibilities
+📊 **OVERWATCH Dashboard**  
+Visualizes the complete operational picture.
 
 ---
 
-## Current Intelligence Capabilities
+# Engineering Philosophy
 
-* operational posture awareness
-* explainable telemetry reasoning
-* severity concentration analysis
-* endpoint hotspot awareness
-* operational issue density analysis
-* telemetry prioritization
-* escalation condition analysis
-* operational evidence correlation
+Heimdal follows the engineering principles established by the **Yggdrasil Foundation**.
+
+We believe operational intelligence should be:
+
+- Explainable
+- Contextual
+- Reliable
+- Consistent
+- Human-Centered
+
+Understanding creates better decisions.
 
 ---
 
-## Keywords
+# License
 
-Cybersecurity, Observability, Telemetry, Operational Intelligence,
-Security Automation, Telemetry Analysis, Explainable Intelligence,
-Risk Prioritization, Escalation Awareness, Endpoint Correlation,
-Operational Awareness, Telemetry Normalization,
-Security Engineering, Python, Intelligence Layer,
-Observability Engineering, Telemetry Interpretation,
-Security Monitoring, Operational Posture,
-Threat Visibility, Modular Architecture
+Released under the **MIT License**.
